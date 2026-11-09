@@ -1,2 +1,26 @@
+# --- Databricks ---
+# Bundle state, sync snapshots, and .databricks.env (may hold auth details)
+.databricks/
+# CLI profile with tokens, in case one is ever copied in here
+.databrickscfg
 
-.databricks
+# --- Python / uv ---
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# --- Secrets / local config ---
+.env
+*.env
+
+# --- OS / OneDrive ---
+Thumbs.db
+desktop.ini
+.DS_Store
