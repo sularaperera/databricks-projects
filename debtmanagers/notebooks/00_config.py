@@ -98,6 +98,9 @@ def clean_nz_phone(col_name):
     national = F.when(digits.startswith("64"), F.substring(digits, 3, 20)) \
                 .when(digits.startswith("0"), F.substring(digits, 2, 20))
     return F.when(F.length(national).between(8, 10), F.concat(F.lit("+64"), national))
+# Here you can use google's libphonenumber for more robust validation, but it's not available in Spark SQL.
+# so to use it, you would need to write a UDF, which is not as efficient as using Spark SQL functions.
+# UDFs can be slower because they require data to be moved between the JVM and Python, and they don't benefit from Spark's Catalyst optimizer.
 
 
 def clean_money(col_name):
