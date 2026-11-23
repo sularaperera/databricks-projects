@@ -1,0 +1,5 @@
+attempt_id,client_account_ref,attempt_ts,channel,outcome,agent_id
+DL0000901,KPE-50001,2026-11-14 09:15,call,promise_to_pay,AG03
+DL0000902,KPE-50002,2026-11-14 09:40,call,no_answer,AG03
+DL0000903,KPE-50004,2026-11-14 10:05,sms,sent,
+DL0000904,SFN-110644,2026-11-14 11:30,call,right_party_contact,AG05

@@ -1,0 +1,7 @@
+client_code,client_account_ref,first_name,last_name,date_of_birth,phone,email,balance_owing,debt_date
+KPE,KPE-50001,Aroha,Ngata,1988-04-12,021 555 0101,aroha.ngata@example.co.nz,1250.00,2026-09-30
+KPE,KPE-50003,Mere,Parata,3 Feb 1992,(09) 555 0103,mere.p@example.co.nz,88.2,1 Oct 2026
+KPE,KPE-50002,Liam,Smith,12/07/1975,+64 21 555 0199,liam.smith@example.co.nz,"2,100.50",30/09/2026
+KPE,KPE-50004,Sione,Tupou,19900815,0275550104,sione.t@example.co.nz,4500,20261001
+KPE,KPE-50007,Noah,Brown,1991-06-01,022 555 0107,noah.b@example.co.nz,450.00,2026-10-03
+KPE,KPE-50012,Mia,Walker,1999-12-01,021 555 0112,mia.walker@example.co.nz,"1,075.00",2026-11-10

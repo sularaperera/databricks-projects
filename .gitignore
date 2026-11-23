@@ -24,3 +24,8 @@ dist/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# --- Excluded project folders ---
+/03-ppl/
+/databricks_course_databeli/
+

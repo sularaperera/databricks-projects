@@ -1,0 +1,1132 @@
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=37529 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+Picked up JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts -Djavax.net.ssl.trustStoreType=JKS -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=37529 -Dhttp.nonProxyHosts=localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local -Djdk.http.auth.tunneling.disabledSchemes= -Djdk.http.auth.proxying.disabledSchemes=
+Picked up _JAVA_OPTIONS: -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_base64_encodeBlock,_base64_decodeBlock
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/22 22:51:26 WARN Utils: Your hostname, vm, resolves to a loopback address: 127.0.0.1; using 192.0.2.2 instead (on interface eth0)
+26/11/22 22:51:26 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+26/11/22 22:51:27 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+Copied 13 new file(s) from /mnt/attach/project-files/databricks_debt_project/data/landing to /tmp/debt_local_nh69xw_w/landing
+  clients           1 file(s): clients_2026-11-13.csv
+  placements        3 file(s): placements_2026-11-13.csv, placements_2026-11-14.csv, placements_2026-11-15.csv
+  bank_payments     3 file(s): bank_payments_2026-11-13.csv, bank_payments_2026-11-14.csv, bank_payments_2026-11-15.csv
+  bank_control      3 file(s): bank_control_2026-11-13.csv, bank_control_2026-11-14.csv, bank_control_2026-11-15.csv
+  contact_attempts  3 file(s): contact_attempts_2026-11-13.csv, contact_attempts_2026-11-14.csv, contact_attempts_2026-11-15.csv
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+===== 2026-11-13 =====
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 02_bronze_ingest: success details=clients: 4 rows loaded | placements: 88 rows loaded | bank_payments: 215 rows loaded | bank_control: 1 rows loaded | contact_attempts: 292 rows loaded
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status|loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+|bank_control    |bank_control_2026-11-13.csv    |2026-11-13|29bf3c2998d26a289dcb8ef5c7607800f013fcc3db3f038801dd5121ef876646|1          |loaded|2026-11-23 11:51:50.033002|
+|bank_payments   |bank_payments_2026-11-13.csv   |2026-11-13|1666f34fad4d47e5e947eff265219ee174a499d307e4bf6883fc01c21988ef5a|215        |loaded|2026-11-23 11:51:47.533481|
+|clients         |clients_2026-11-13.csv         |2026-11-13|b48fbf278bcc50533115277c667a25120a266d0ec792f6a705cfa6a8c0807712|4          |loaded|2026-11-23 11:51:40.951332|
+|contact_attempts|contact_attempts_2026-11-13.csv|2026-11-13|504344126b2936ff3d6585de20e9244044e4a7ed3fe74eb045dc2e2c3b26c9b2|292        |loaded|2026-11-23 11:51:52.707323|
+|placements      |placements_2026-11-13.csv      |2026-11-13|f29c58053f19bb9824c60b586a7c975502d2d73f5fae413eee2f2563fdd358b9|88         |loaded|2026-11-23 11:51:44.778856|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 03_silver_clients: success inserted=4, updated=0
++-----------+---------------------+---------+---------------+--------------+----------------------------------------------------------------+-----------------+
+|client_code|client_name          |industry |commission_rate|onboarded_date|row_hash                                                        |last_updated_date|
++-----------+---------------------+---------+---------------+--------------+----------------------------------------------------------------+-----------------+
+|ADG        |Auckland Dental Group|Health   |0.2000         |2025-07-01    |9b0d8730af0479e3d50d25b1a0e5b56b96d4c5081c881d2daf96a00489666e43|2026-11-13       |
+|HTL        |Harbour Telecom      |Telco    |0.2200         |2025-07-01    |b0f47bd1ef6202860bd5189ecb0d067a79dc25d0048288514c1c9a7d21b7d7e2|2026-11-13       |
+|KPE        |Kiwi Power Energy    |Utilities|0.1800         |2025-07-01    |2c8db82c5bfade1833513daca20fd8b8e2774a7e74d87aab15a94eeae00c588d|2026-11-13       |
+|SFN        |Southern Finance     |Finance  |0.1500         |2025-07-01    |092a6e1199e831c117e9d1ecd584d1d826589b5df303cbecf4552c9dc0b606f1|2026-11-13       |
++-----------+---------------------+---------+---------------+--------------+----------------------------------------------------------------+-----------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+------+
+|client_account_ref|reason|
++------------------+------+
++------------------+------+
+[2026-11-13] 04_silver_placements: success rows_in=88, quarantined=0, accounts_inserted=88, accounts_updated=0, debtor_versions_added=60, debtor_versions_closed=0
++----------+----------+---------+-------------+----------+-----+--------+----------+--------+----------+
+|debtor_key|first_name|last_name|date_of_birth|phone_e164|email|row_hash|valid_from|valid_to|is_current|
++----------+----------+---------+-------------+----------+-----+--------+----------+--------+----------+
++----------+----------+---------+-------------+----------+-----+--------+----------+--------+----------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 05_silver_payments: success rows_in=215, quarantined=0, in_file_duplicates=1, inserted=214, updated=0, already_loaded=0
++-----------+------------------+------+------+
+|bank_txn_id|client_account_ref|amount|reason|
++-----------+------------------+------+------+
++-----------+------------------+------+------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 06_silver_contacts: success rows_in=292, quarantined=0, inserted=292, updated=0
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 07_gold_dimensions: success dim_client=4, dim_debtor=60, dim_account=88
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 08_gold_facts: success payments_inserted=214, payments_updated=0, contacts_inserted=292, snapshot_rows=88
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |26        |110706.64|28848.95 |26.1               |
+|Auckland Dental Group|20        |65005.05 |9212.08  |14.2               |
+|Harbour Telecom      |17        |55980.04 |4625.86  |8.3                |
+|Southern Finance     |25        |84184.76 |3600.43  |4.3                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-13   |1) 0-30      |13        |51188.13           |
+|2026-11-13   |2) 31-60     |7         |28436.60           |
+|2026-11-13   |3) 61-90     |6         |32928.36           |
+|2026-11-13   |4) 90+       |50        |157036.08          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |148               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |96                |
+|SFN-110644        |Southern Finance     |Wiremu Tupou  |+64 *** *056|10445.97           |2026-08-02       |103               |
+|ADG-718439        |Auckland Dental Group|Mere Walker   |+64 *** *834|10065.45           |2026-04-11       |216               |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |166               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |113               |
+|HTL-947458        |Harbour Telecom      |Emma Smith    |+64 *** *255|8854.12            |NULL             |146               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |202               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |110               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |165               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |11      |4   |36.4         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+|run_date  |check_name               |target               |status|observed |expected         |
++----------+-------------------------+---------------------+------+---------+-----------------+
+|2026-11-13|bank_reconciliation_count|bank_payments        |PASS  |214      |214              |
+|2026-11-13|bank_reconciliation_total|bank_payments        |PASS  |46287.32 |46287.32         |
+|2026-11-13|freshness                |placements           |PASS  |arrived  |file for run_date|
+|2026-11-13|freshness                |bank_payments        |PASS  |arrived  |file for run_date|
+|2026-11-13|freshness                |bank_control         |PASS  |arrived  |file for run_date|
+|2026-11-13|freshness                |contact_attempts     |PASS  |arrived  |file for run_date|
+|2026-11-13|one_current_version      |debtors              |PASS  |0        |0                |
+|2026-11-13|orphan_facts             |fact_payments        |PASS  |0        |0                |
+|2026-11-13|quarantine_rate_pct      |placements           |PASS  |0.0      |<= 10            |
+|2026-11-13|quarantine_rate_pct      |contact_attempts     |PASS  |0.0      |<= 10            |
+|2026-11-13|quarantine_rate_pct      |bank_payments        |PASS  |0.0      |<= 10            |
+|2026-11-13|unique_key               |accounts             |PASS  |0        |0                |
+|2026-11-13|unique_key               |payments             |PASS  |0        |0                |
+|2026-11-13|unique_key               |contact_attempts     |PASS  |0        |0                |
+|2026-11-13|unique_key               |fact_payments        |PASS  |0        |0                |
+|2026-11-13|unique_key               |fact_account_snapshot|PASS  |0        |0                |
+|2026-11-13|unmatched_payments       |payments_quarantine  |PASS  |0 txn, $0|0                |
++----------+-------------------------+---------------------+------+---------+-----------------+
+[2026-11-13] 10_data_quality: success passed=17, warnings=0, failures=0
+===== 2026-11-14 =====
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 02_bronze_ingest: success details=clients: no file | placements: 12 rows loaded | bank_payments: 4 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status|loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+|bank_control    |bank_control_2026-11-14.csv    |2026-11-14|810eb31ae2a03a648760c187ecea2a1d27c7330c9e31f91bb34adf0c9f0c09f6|1          |loaded|2026-11-23 11:53:12.08882 |
+|bank_payments   |bank_payments_2026-11-14.csv   |2026-11-14|5f7485d672646d8f240ae6218fdf2f4b47647f2807b60ab0047cf03d7b392177|4          |loaded|2026-11-23 11:53:09.682182|
+|contact_attempts|contact_attempts_2026-11-14.csv|2026-11-14|1ced628996570103fb846e621b02642d9ebfbc5a58a50e65b03a07ba002bbf69|4          |loaded|2026-11-23 11:53:14.302142|
+|placements      |placements_2026-11-14.csv      |2026-11-14|f422488a77dee34a340eafec6e3ace97ef4e6e6dfb9ae8befc7b9584a1eb8b6b|12         |loaded|2026-11-23 11:53:06.846189|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 03_silver_clients: no_data 
+  03_silver_clients: no client file for this date
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+-------------------------------------+
+|client_account_ref|reason                               |
++------------------+-------------------------------------+
+|KPE-50006         |invalid date of birth                |
+|KPE-50007         |invalid phone                        |
+|KPE-50008         |invalid email; missing balance       |
+|NULL              |missing account ref                  |
+|KPE-50010         |debtor under 18; balance not positive|
+|KPE-50011         |debt date in the future              |
++------------------+-------------------------------------+
+[2026-11-14] 04_silver_placements: success rows_in=12, quarantined=6, accounts_inserted=5, accounts_updated=0, debtor_versions_added=5, debtor_versions_closed=0
++----------+----------+---------+-------------+----------+-----+--------+----------+--------+----------+
+|debtor_key|first_name|last_name|date_of_birth|phone_e164|email|row_hash|valid_from|valid_to|is_current|
++----------+----------+---------+-------------+----------+-----+--------+----------+--------+----------+
++----------+----------+---------+-------------+----------+-----+--------+----------+--------+----------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 05_silver_payments: success rows_in=4, quarantined=0, in_file_duplicates=0, inserted=4, updated=0, already_loaded=0
++-----------+------------------+------+------+
+|bank_txn_id|client_account_ref|amount|reason|
++-----------+------------------+------+------+
++-----------+------------------+------+------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 06_silver_contacts: success rows_in=4, quarantined=0, inserted=4, updated=0
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 07_gold_dimensions: success dim_client=4, dim_debtor=65, dim_account=93
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 08_gold_facts: success payments_inserted=4, payments_updated=0, contacts_inserted=4, snapshot_rows=93
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |31        |119994.34|29037.15 |24.2               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |4625.86  |8.3                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-14   |1) 0-30      |16        |72524.55           |
+|2026-11-14   |2) 31-60     |10        |36386.10           |
+|2026-11-14   |3) 61-90     |6         |32928.36           |
+|2026-11-14   |4) 90+       |48        |136524.66          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |149               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |97                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |167               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |114               |
+|HTL-947458        |Harbour Telecom      |Emma Smith    |+64 *** *255|8854.12            |NULL             |147               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |203               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |111               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |166               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |179               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |12      |5   |41.7         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+|run_date  |check_name               |target               |status|observed |expected         |
++----------+-------------------------+---------------------+------+---------+-----------------+
+|2026-11-14|quarantine_rate_pct      |placements           |WARN  |50.0     |<= 10            |
+|2026-11-14|bank_reconciliation_count|bank_payments        |PASS  |4        |4                |
+|2026-11-14|bank_reconciliation_total|bank_payments        |PASS  |513.20   |513.20           |
+|2026-11-14|freshness                |placements           |PASS  |arrived  |file for run_date|
+|2026-11-14|freshness                |bank_payments        |PASS  |arrived  |file for run_date|
+|2026-11-14|freshness                |bank_control         |PASS  |arrived  |file for run_date|
+|2026-11-14|freshness                |contact_attempts     |PASS  |arrived  |file for run_date|
+|2026-11-14|one_current_version      |debtors              |PASS  |0        |0                |
+|2026-11-14|orphan_facts             |fact_payments        |PASS  |0        |0                |
+|2026-11-14|quarantine_rate_pct      |bank_payments        |PASS  |0.0      |<= 10            |
+|2026-11-14|quarantine_rate_pct      |contact_attempts     |PASS  |0.0      |<= 10            |
+|2026-11-14|unique_key               |accounts             |PASS  |0        |0                |
+|2026-11-14|unique_key               |payments             |PASS  |0        |0                |
+|2026-11-14|unique_key               |contact_attempts     |PASS  |0        |0                |
+|2026-11-14|unique_key               |fact_payments        |PASS  |0        |0                |
+|2026-11-14|unique_key               |fact_account_snapshot|PASS  |0        |0                |
+|2026-11-14|unmatched_payments       |payments_quarantine  |PASS  |0 txn, $0|0                |
++----------+-------------------------+---------------------+------+---------+-----------------+
+[2026-11-14] 10_data_quality: success passed=16, warnings=1, failures=0
+===== 2026-11-15 =====
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 02_bronze_ingest: success details=clients: no file | placements: 6 rows loaded | bank_payments: 5 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status|loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|1          |loaded|2026-11-23 11:54:31.06328 |
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|5          |loaded|2026-11-23 11:54:28.320645|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|4          |loaded|2026-11-23 11:54:33.439517|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|6          |loaded|2026-11-23 11:54:24.435621|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 03_silver_clients: no_data 
+  03_silver_clients: no client file for this date
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+------+
+|client_account_ref|reason|
++------------------+------+
++------------------+------+
+[2026-11-15] 04_silver_placements: success rows_in=6, quarantined=0, accounts_inserted=2, accounts_updated=2, debtor_versions_added=3, debtor_versions_closed=1
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|debtor_key      |first_name|last_name|date_of_birth|phone_e164  |email                   |row_hash                                                        |valid_from|valid_to  |is_current|
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550102|liam.smith@example.co.nz|10d04b6c47ce70db25c16ce757ecb6e95ed7cb6e0d3b61a8df2959c9bc1a22ee|2026-11-14|2026-11-15|false     |
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550199|liam.smith@example.co.nz|b1692771382343e2cbe30cd91406268d509cb6cfff8a96d61bb6a1b1637dd458|2026-11-15|9999-12-31|true      |
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 05_silver_payments: success rows_in=5, quarantined=1, in_file_duplicates=0, inserted=3, updated=0, already_loaded=1
++-----------+------------------+------+-------------------+
+|bank_txn_id|client_account_ref|amount|reason             |
++-----------+------------------+------+-------------------+
+|BNZ00000907|KPE-99999         |40.00 |unknown account ref|
++-----------+------------------+------+-------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 06_silver_contacts: success rows_in=4, quarantined=0, inserted=3, updated=0
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 07_gold_dimensions: success dim_client=4, dim_debtor=68, dim_account=95
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 08_gold_facts: success payments_inserted=3, payments_updated=0, contacts_inserted=3, snapshot_rows=95
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |33        |120780.34|29312.15 |24.3               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |5125.86  |9.2                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-15   |1) 0-30      |18        |77885.91           |
+|2026-11-15   |2) 31-60     |10        |33718.97           |
+|2026-11-15   |3) 61-90     |7         |39099.25           |
+|2026-11-15   |4) 90+       |47        |127670.54          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |150               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |98                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |168               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |115               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |204               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |112               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |167               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |180               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |177               |
+|ADG-632929        |Auckland Dental Group|Tane Thompson |+64 *** *118|4565.49            |2026-05-23       |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |13      |6   |46.2         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|run_date  |check_name               |target               |status|observed     |expected         |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|2026-11-15|quarantine_rate_pct      |bank_payments        |WARN  |20.0         |<= 10            |
+|2026-11-15|unmatched_payments       |payments_quarantine  |WARN  |1 txn, $40.00|0                |
+|2026-11-15|bank_reconciliation_count|bank_payments        |PASS  |5            |5                |
+|2026-11-15|bank_reconciliation_total|bank_payments        |PASS  |890.00       |890.00           |
+|2026-11-15|freshness                |placements           |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_payments        |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_control         |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |contact_attempts     |PASS  |arrived      |file for run_date|
+|2026-11-15|one_current_version      |debtors              |PASS  |0            |0                |
+|2026-11-15|orphan_facts             |fact_payments        |PASS  |0            |0                |
+|2026-11-15|quarantine_rate_pct      |placements           |PASS  |0.0          |<= 10            |
+|2026-11-15|quarantine_rate_pct      |contact_attempts     |PASS  |0.0          |<= 10            |
+|2026-11-15|unique_key               |accounts             |PASS  |0            |0                |
+|2026-11-15|unique_key               |payments             |PASS  |0            |0                |
+|2026-11-15|unique_key               |contact_attempts     |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_payments        |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_account_snapshot|PASS  |0            |0                |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+[2026-11-15] 10_data_quality: success passed=15, warnings=2, failures=0
++----------+--------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|run_date  |step                |status |details                                                                                                                                                       |
++----------+--------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|2026-11-13|02_bronze_ingest    |success|details=clients: 4 rows loaded | placements: 88 rows loaded | bank_payments: 215 rows loaded | bank_control: 1 rows loaded | contact_attempts: 292 rows loaded|
+|2026-11-13|03_silver_clients   |success|inserted=4, updated=0                                                                                                                                         |
+|2026-11-13|04_silver_placements|success|rows_in=88, quarantined=0, accounts_inserted=88, accounts_updated=0, debtor_versions_added=60, debtor_versions_closed=0                                       |
+|2026-11-13|05_silver_payments  |success|rows_in=215, quarantined=0, in_file_duplicates=1, inserted=214, updated=0, already_loaded=0                                                                   |
+|2026-11-13|06_silver_contacts  |success|rows_in=292, quarantined=0, inserted=292, updated=0                                                                                                           |
+|2026-11-13|07_gold_dimensions  |success|dim_client=4, dim_debtor=60, dim_account=88                                                                                                                   |
+|2026-11-13|08_gold_facts       |success|payments_inserted=214, payments_updated=0, contacts_inserted=292, snapshot_rows=88                                                                            |
+|2026-11-13|09_gold_kpi_views   |success|views=5                                                                                                                                                       |
+|2026-11-13|10_data_quality     |success|passed=17, warnings=0, failures=0                                                                                                                             |
+|2026-11-14|02_bronze_ingest    |success|details=clients: no file | placements: 12 rows loaded | bank_payments: 4 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded          |
+|2026-11-14|03_silver_clients   |no_data|                                                                                                                                                              |
+|2026-11-14|04_silver_placements|success|rows_in=12, quarantined=6, accounts_inserted=5, accounts_updated=0, debtor_versions_added=5, debtor_versions_closed=0                                         |
+|2026-11-14|05_silver_payments  |success|rows_in=4, quarantined=0, in_file_duplicates=0, inserted=4, updated=0, already_loaded=0                                                                       |
+|2026-11-14|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=4, updated=0                                                                                                               |
+|2026-11-14|07_gold_dimensions  |success|dim_client=4, dim_debtor=65, dim_account=93                                                                                                                   |
+|2026-11-14|08_gold_facts       |success|payments_inserted=4, payments_updated=0, contacts_inserted=4, snapshot_rows=93                                                                                |
+|2026-11-14|09_gold_kpi_views   |success|views=5                                                                                                                                                       |
+|2026-11-14|10_data_quality     |success|passed=16, warnings=1, failures=0                                                                                                                             |
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: 6 rows loaded | bank_payments: 5 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded           |
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                              |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=2, accounts_updated=2, debtor_versions_added=3, debtor_versions_closed=1                                          |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=3, updated=0, already_loaded=1                                                                       |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=3, updated=0                                                                                                               |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                   |
+|2026-11-15|08_gold_facts       |success|payments_inserted=3, payments_updated=0, contacts_inserted=3, snapshot_rows=95                                                                                |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                       |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                             |
++----------+--------------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+|run_date  |check_name         |target             |status|observed     |expected|checked_at                |
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+|2026-11-14|quarantine_rate_pct|placements         |WARN  |50.0         |<= 10   |2026-11-23 11:54:20.158052|
+|2026-11-15|quarantine_rate_pct|bank_payments      |WARN  |20.0         |<= 10   |2026-11-23 11:55:33.535008|
+|2026-11-15|unmatched_payments |payments_quarantine|WARN  |1 txn, $40.00|0       |2026-11-23 11:55:33.535008|
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+===== 2026-11-15 =====
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 02_bronze_ingest: success details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status           |loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|0          |skipped_duplicate|2026-11-23 11:55:45.506629|
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|1          |loaded           |2026-11-23 11:54:31.06328 |
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|0          |skipped_duplicate|2026-11-23 11:55:44.178705|
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|5          |loaded           |2026-11-23 11:54:28.320645|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|0          |skipped_duplicate|2026-11-23 11:55:46.867872|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|4          |loaded           |2026-11-23 11:54:33.439517|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|0          |skipped_duplicate|2026-11-23 11:55:42.751708|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|6          |loaded           |2026-11-23 11:54:24.435621|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 03_silver_clients: no_data 
+  03_silver_clients: no client file for this date
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+------+
+|client_account_ref|reason|
++------------------+------+
++------------------+------+
+[2026-11-15] 04_silver_placements: success rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|debtor_key      |first_name|last_name|date_of_birth|phone_e164  |email                   |row_hash                                                        |valid_from|valid_to  |is_current|
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550102|liam.smith@example.co.nz|10d04b6c47ce70db25c16ce757ecb6e95ed7cb6e0d3b61a8df2959c9bc1a22ee|2026-11-14|2026-11-15|false     |
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550199|liam.smith@example.co.nz|b1692771382343e2cbe30cd91406268d509cb6cfff8a96d61bb6a1b1637dd458|2026-11-15|9999-12-31|true      |
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 05_silver_payments: success rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4
++-----------+------------------+------+-------------------+
+|bank_txn_id|client_account_ref|amount|reason             |
++-----------+------------------+------+-------------------+
+|BNZ00000907|KPE-99999         |40.00 |unknown account ref|
++-----------+------------------+------+-------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 06_silver_contacts: success rows_in=4, quarantined=0, inserted=0, updated=0
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 07_gold_dimensions: success dim_client=4, dim_debtor=68, dim_account=95
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 08_gold_facts: success payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |33        |120780.34|29312.15 |24.3               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |5125.86  |9.2                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-15   |1) 0-30      |18        |77885.91           |
+|2026-11-15   |2) 31-60     |10        |33718.97           |
+|2026-11-15   |3) 61-90     |7         |39099.25           |
+|2026-11-15   |4) 90+       |47        |127670.54          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |150               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |98                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |168               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |115               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |204               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |112               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |167               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |180               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |177               |
+|ADG-632929        |Auckland Dental Group|Tane Thompson |+64 *** *118|4565.49            |2026-05-23       |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |13      |6   |46.2         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+|run_date  |check_name               |target               |status|observed     |expected         |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|2026-11-15|quarantine_rate_pct      |bank_payments        |WARN  |20.0         |<= 10            |
+|2026-11-15|unmatched_payments       |payments_quarantine  |WARN  |1 txn, $40.00|0                |
+|2026-11-15|bank_reconciliation_count|bank_payments        |PASS  |5            |5                |
+|2026-11-15|bank_reconciliation_total|bank_payments        |PASS  |890.00       |890.00           |
+|2026-11-15|freshness                |placements           |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_payments        |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_control         |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |contact_attempts     |PASS  |arrived      |file for run_date|
+|2026-11-15|one_current_version      |debtors              |PASS  |0            |0                |
+|2026-11-15|orphan_facts             |fact_payments        |PASS  |0            |0                |
+|2026-11-15|quarantine_rate_pct      |placements           |PASS  |0.0          |<= 10            |
+|2026-11-15|quarantine_rate_pct      |contact_attempts     |PASS  |0.0          |<= 10            |
+|2026-11-15|unique_key               |accounts             |PASS  |0            |0                |
+|2026-11-15|unique_key               |payments             |PASS  |0            |0                |
+|2026-11-15|unique_key               |contact_attempts     |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_payments        |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_account_snapshot|PASS  |0            |0                |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+[2026-11-15] 10_data_quality: success passed=15, warnings=2, failures=0
++----------+--------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|run_date  |step                |status |details                                                                                                                                                                                        |
++----------+--------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: 6 rows loaded | bank_payments: 5 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded                                            |
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                                                               |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=2, accounts_updated=2, debtor_versions_added=3, debtor_versions_closed=1                                                                           |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=3, updated=0, already_loaded=1                                                                                                        |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=3, updated=0                                                                                                                                                |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                    |
+|2026-11-15|08_gold_facts       |success|payments_inserted=3, payments_updated=0, contacts_inserted=3, snapshot_rows=95                                                                                                                 |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                                                        |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                              |
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)|
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                                                               |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0                                                                           |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4                                                                                                        |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=0, updated=0                                                                                                                                                |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                    |
+|2026-11-15|08_gold_facts       |success|payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95                                                                                                                 |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                                                        |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                              |
++----------+--------------------+-------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+|run_date  |check_name         |target             |status|observed     |expected|checked_at                |
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+|2026-11-14|quarantine_rate_pct|placements         |WARN  |50.0         |<= 10   |2026-11-23 11:54:20.158052|
+|2026-11-15|quarantine_rate_pct|bank_payments      |WARN  |20.0         |<= 10   |2026-11-23 11:56:45.382351|
+|2026-11-15|unmatched_payments |payments_quarantine|WARN  |1 txn, $40.00|0       |2026-11-23 11:56:45.382351|
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+Test 1, rerun last day: PASS  (19/19 tables identical)
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 02_bronze_ingest: success details=clients: no file | placements: 6 rows loaded | bank_payments: 5 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status           |loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|0          |skipped_duplicate|2026-11-23 11:55:45.506629|
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|1          |loaded           |2026-11-23 11:54:31.06328 |
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|1          |loaded           |2026-11-23 11:57:01.284649|
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|0          |skipped_duplicate|2026-11-23 11:55:44.178705|
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|5          |loaded           |2026-11-23 11:56:58.99056 |
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|5          |loaded           |2026-11-23 11:54:28.320645|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|0          |skipped_duplicate|2026-11-23 11:55:46.867872|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|4          |loaded           |2026-11-23 11:57:05.10777 |
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|4          |loaded           |2026-11-23 11:54:33.439517|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|6          |loaded           |2026-11-23 11:56:56.401655|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|0          |skipped_duplicate|2026-11-23 11:55:42.751708|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|6          |loaded           |2026-11-23 11:54:24.435621|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 03_silver_clients: no_data 
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+------+
+|client_account_ref|reason|
++------------------+------+
++------------------+------+
+[2026-11-15] 04_silver_placements: success rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|debtor_key      |first_name|last_name|date_of_birth|phone_e164  |email                   |row_hash                                                        |valid_from|valid_to  |is_current|
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550102|liam.smith@example.co.nz|10d04b6c47ce70db25c16ce757ecb6e95ed7cb6e0d3b61a8df2959c9bc1a22ee|2026-11-14|2026-11-15|false     |
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550199|liam.smith@example.co.nz|b1692771382343e2cbe30cd91406268d509cb6cfff8a96d61bb6a1b1637dd458|2026-11-15|9999-12-31|true      |
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 05_silver_payments: success rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4
++-----------+------------------+------+-------------------+
+|bank_txn_id|client_account_ref|amount|reason             |
++-----------+------------------+------+-------------------+
+|BNZ00000907|KPE-99999         |40.00 |unknown account ref|
++-----------+------------------+------+-------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 06_silver_contacts: success rows_in=4, quarantined=0, inserted=0, updated=0
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 07_gold_dimensions: success dim_client=4, dim_debtor=68, dim_account=95
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 08_gold_facts: success payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |33        |120780.34|29312.15 |24.3               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |5125.86  |9.2                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-15   |1) 0-30      |18        |77885.91           |
+|2026-11-15   |2) 31-60     |10        |33718.97           |
+|2026-11-15   |3) 61-90     |7         |39099.25           |
+|2026-11-15   |4) 90+       |47        |127670.54          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |150               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |98                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |168               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |115               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |204               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |112               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |167               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |180               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |177               |
+|ADG-632929        |Auckland Dental Group|Tane Thompson |+64 *** *118|4565.49            |2026-05-23       |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |13      |6   |46.2         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|run_date  |check_name               |target               |status|observed     |expected         |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|2026-11-15|quarantine_rate_pct      |bank_payments        |WARN  |20.0         |<= 10            |
+|2026-11-15|unmatched_payments       |payments_quarantine  |WARN  |1 txn, $40.00|0                |
+|2026-11-15|bank_reconciliation_count|bank_payments        |PASS  |5            |5                |
+|2026-11-15|bank_reconciliation_total|bank_payments        |PASS  |890.00       |890.00           |
+|2026-11-15|freshness                |placements           |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_payments        |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_control         |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |contact_attempts     |PASS  |arrived      |file for run_date|
+|2026-11-15|one_current_version      |debtors              |PASS  |0            |0                |
+|2026-11-15|orphan_facts             |fact_payments        |PASS  |0            |0                |
+|2026-11-15|quarantine_rate_pct      |placements           |PASS  |0.0          |<= 10            |
+|2026-11-15|quarantine_rate_pct      |contact_attempts     |PASS  |0.0          |<= 10            |
+|2026-11-15|unique_key               |accounts             |PASS  |0            |0                |
+|2026-11-15|unique_key               |payments             |PASS  |0            |0                |
+|2026-11-15|unique_key               |contact_attempts     |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_payments        |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_account_snapshot|PASS  |0            |0                |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+[2026-11-15] 10_data_quality: success passed=15, warnings=2, failures=0
+Test 2, force-reload last day: PASS  (19/19 tables identical)
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+===== 2026-11-13 =====
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 02_bronze_ingest: success details=clients: skipped (already loaded) | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status           |loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|bank_control    |bank_control_2026-11-13.csv    |2026-11-13|29bf3c2998d26a289dcb8ef5c7607800f013fcc3db3f038801dd5121ef876646|1          |loaded           |2026-11-23 11:51:50.033002|
+|bank_control    |bank_control_2026-11-13.csv    |2026-11-13|29bf3c2998d26a289dcb8ef5c7607800f013fcc3db3f038801dd5121ef876646|0          |skipped_duplicate|2026-11-23 11:58:19.656801|
+|bank_payments   |bank_payments_2026-11-13.csv   |2026-11-13|1666f34fad4d47e5e947eff265219ee174a499d307e4bf6883fc01c21988ef5a|215        |loaded           |2026-11-23 11:51:47.533481|
+|bank_payments   |bank_payments_2026-11-13.csv   |2026-11-13|1666f34fad4d47e5e947eff265219ee174a499d307e4bf6883fc01c21988ef5a|0          |skipped_duplicate|2026-11-23 11:58:18.310286|
+|clients         |clients_2026-11-13.csv         |2026-11-13|b48fbf278bcc50533115277c667a25120a266d0ec792f6a705cfa6a8c0807712|0          |skipped_duplicate|2026-11-23 11:58:15.446191|
+|clients         |clients_2026-11-13.csv         |2026-11-13|b48fbf278bcc50533115277c667a25120a266d0ec792f6a705cfa6a8c0807712|4          |loaded           |2026-11-23 11:51:40.951332|
+|contact_attempts|contact_attempts_2026-11-13.csv|2026-11-13|504344126b2936ff3d6585de20e9244044e4a7ed3fe74eb045dc2e2c3b26c9b2|0          |skipped_duplicate|2026-11-23 11:58:21.061613|
+|contact_attempts|contact_attempts_2026-11-13.csv|2026-11-13|504344126b2936ff3d6585de20e9244044e4a7ed3fe74eb045dc2e2c3b26c9b2|292        |loaded           |2026-11-23 11:51:52.707323|
+|placements      |placements_2026-11-13.csv      |2026-11-13|f29c58053f19bb9824c60b586a7c975502d2d73f5fae413eee2f2563fdd358b9|88         |loaded           |2026-11-23 11:51:44.778856|
+|placements      |placements_2026-11-13.csv      |2026-11-13|f29c58053f19bb9824c60b586a7c975502d2d73f5fae413eee2f2563fdd358b9|0          |skipped_duplicate|2026-11-23 11:58:16.852202|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 03_silver_clients: success inserted=0, updated=0
++-----------+---------------------+---------+---------------+--------------+----------------------------------------------------------------+-----------------+
+|client_code|client_name          |industry |commission_rate|onboarded_date|row_hash                                                        |last_updated_date|
++-----------+---------------------+---------+---------------+--------------+----------------------------------------------------------------+-----------------+
+|ADG        |Auckland Dental Group|Health   |0.2000         |2025-07-01    |9b0d8730af0479e3d50d25b1a0e5b56b96d4c5081c881d2daf96a00489666e43|2026-11-13       |
+|HTL        |Harbour Telecom      |Telco    |0.2200         |2025-07-01    |b0f47bd1ef6202860bd5189ecb0d067a79dc25d0048288514c1c9a7d21b7d7e2|2026-11-13       |
+|KPE        |Kiwi Power Energy    |Utilities|0.1800         |2025-07-01    |2c8db82c5bfade1833513daca20fd8b8e2774a7e74d87aab15a94eeae00c588d|2026-11-13       |
+|SFN        |Southern Finance     |Finance  |0.1500         |2025-07-01    |092a6e1199e831c117e9d1ecd584d1d826589b5df303cbecf4552c9dc0b606f1|2026-11-13       |
++-----------+---------------------+---------+---------------+--------------+----------------------------------------------------------------+-----------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+------+
+|client_account_ref|reason|
++------------------+------+
++------------------+------+
+[2026-11-13] 04_silver_placements: success rows_in=88, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|debtor_key      |first_name|last_name|date_of_birth|phone_e164  |email                   |row_hash                                                        |valid_from|valid_to  |is_current|
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550102|liam.smith@example.co.nz|10d04b6c47ce70db25c16ce757ecb6e95ed7cb6e0d3b61a8df2959c9bc1a22ee|2026-11-14|2026-11-15|false     |
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550199|liam.smith@example.co.nz|b1692771382343e2cbe30cd91406268d509cb6cfff8a96d61bb6a1b1637dd458|2026-11-15|9999-12-31|true      |
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 05_silver_payments: success rows_in=215, quarantined=0, in_file_duplicates=1, inserted=0, updated=0, already_loaded=214
++-----------+------------------+------+------+
+|bank_txn_id|client_account_ref|amount|reason|
++-----------+------------------+------+------+
++-----------+------------------+------+------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 06_silver_contacts: success rows_in=292, quarantined=0, inserted=0, updated=0
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 07_gold_dimensions: success dim_client=4, dim_debtor=68, dim_account=95
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 08_gold_facts: success payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=88
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-13] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |33        |120780.34|29312.15 |24.3               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |5125.86  |9.2                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-15   |1) 0-30      |18        |77885.91           |
+|2026-11-15   |2) 31-60     |10        |33718.97           |
+|2026-11-15   |3) 61-90     |7         |39099.25           |
+|2026-11-15   |4) 90+       |47        |127670.54          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |150               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |98                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |168               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |115               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |204               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |112               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |167               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |180               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |177               |
+|ADG-632929        |Auckland Dental Group|Tane Thompson |+64 *** *118|4565.49            |2026-05-23       |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |13      |6   |46.2         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-13 | landing=/tmp/debt_local_nh69xw_w/landing
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|run_date  |check_name               |target               |status|observed     |expected         |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|2026-11-13|unmatched_payments       |payments_quarantine  |WARN  |1 txn, $40.00|0                |
+|2026-11-13|bank_reconciliation_count|bank_payments        |PASS  |214          |214              |
+|2026-11-13|bank_reconciliation_total|bank_payments        |PASS  |46287.32     |46287.32         |
+|2026-11-13|freshness                |placements           |PASS  |arrived      |file for run_date|
+|2026-11-13|freshness                |bank_payments        |PASS  |arrived      |file for run_date|
+|2026-11-13|freshness                |bank_control         |PASS  |arrived      |file for run_date|
+|2026-11-13|freshness                |contact_attempts     |PASS  |arrived      |file for run_date|
+|2026-11-13|one_current_version      |debtors              |PASS  |0            |0                |
+|2026-11-13|orphan_facts             |fact_payments        |PASS  |0            |0                |
+|2026-11-13|quarantine_rate_pct      |placements           |PASS  |0.0          |<= 10            |
+|2026-11-13|quarantine_rate_pct      |contact_attempts     |PASS  |0.0          |<= 10            |
+|2026-11-13|quarantine_rate_pct      |bank_payments        |PASS  |0.0          |<= 10            |
+|2026-11-13|unique_key               |accounts             |PASS  |0            |0                |
+|2026-11-13|unique_key               |payments             |PASS  |0            |0                |
+|2026-11-13|unique_key               |contact_attempts     |PASS  |0            |0                |
+|2026-11-13|unique_key               |fact_payments        |PASS  |0            |0                |
+|2026-11-13|unique_key               |fact_account_snapshot|PASS  |0            |0                |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+[2026-11-13] 10_data_quality: success passed=16, warnings=1, failures=0
+===== 2026-11-14 =====
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 02_bronze_ingest: success details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status           |loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|bank_control    |bank_control_2026-11-14.csv    |2026-11-14|810eb31ae2a03a648760c187ecea2a1d27c7330c9e31f91bb34adf0c9f0c09f6|1          |loaded           |2026-11-23 11:53:12.08882 |
+|bank_control    |bank_control_2026-11-14.csv    |2026-11-14|810eb31ae2a03a648760c187ecea2a1d27c7330c9e31f91bb34adf0c9f0c09f6|0          |skipped_duplicate|2026-11-23 11:59:23.372497|
+|bank_payments   |bank_payments_2026-11-14.csv   |2026-11-14|5f7485d672646d8f240ae6218fdf2f4b47647f2807b60ab0047cf03d7b392177|4          |loaded           |2026-11-23 11:53:09.682182|
+|bank_payments   |bank_payments_2026-11-14.csv   |2026-11-14|5f7485d672646d8f240ae6218fdf2f4b47647f2807b60ab0047cf03d7b392177|0          |skipped_duplicate|2026-11-23 11:59:22.218511|
+|contact_attempts|contact_attempts_2026-11-14.csv|2026-11-14|1ced628996570103fb846e621b02642d9ebfbc5a58a50e65b03a07ba002bbf69|0          |skipped_duplicate|2026-11-23 11:59:24.431639|
+|contact_attempts|contact_attempts_2026-11-14.csv|2026-11-14|1ced628996570103fb846e621b02642d9ebfbc5a58a50e65b03a07ba002bbf69|4          |loaded           |2026-11-23 11:53:14.302142|
+|placements      |placements_2026-11-14.csv      |2026-11-14|f422488a77dee34a340eafec6e3ace97ef4e6e6dfb9ae8befc7b9584a1eb8b6b|0          |skipped_duplicate|2026-11-23 11:59:20.877155|
+|placements      |placements_2026-11-14.csv      |2026-11-14|f422488a77dee34a340eafec6e3ace97ef4e6e6dfb9ae8befc7b9584a1eb8b6b|12         |loaded           |2026-11-23 11:53:06.846189|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 03_silver_clients: no_data 
+  03_silver_clients: no client file for this date
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+-------------------------------------+
+|client_account_ref|reason                               |
++------------------+-------------------------------------+
+|KPE-50006         |invalid date of birth                |
+|KPE-50007         |invalid phone                        |
+|KPE-50008         |invalid email; missing balance       |
+|NULL              |missing account ref                  |
+|KPE-50010         |debtor under 18; balance not positive|
+|KPE-50011         |debt date in the future              |
++------------------+-------------------------------------+
+[2026-11-14] 04_silver_placements: success rows_in=12, quarantined=6, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|debtor_key      |first_name|last_name|date_of_birth|phone_e164  |email                   |row_hash                                                        |valid_from|valid_to  |is_current|
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550102|liam.smith@example.co.nz|10d04b6c47ce70db25c16ce757ecb6e95ed7cb6e0d3b61a8df2959c9bc1a22ee|2026-11-14|2026-11-15|false     |
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550199|liam.smith@example.co.nz|b1692771382343e2cbe30cd91406268d509cb6cfff8a96d61bb6a1b1637dd458|2026-11-15|9999-12-31|true      |
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 05_silver_payments: success rows_in=4, quarantined=0, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4
++-----------+------------------+------+------+
+|bank_txn_id|client_account_ref|amount|reason|
++-----------+------------------+------+------+
++-----------+------------------+------+------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 06_silver_contacts: success rows_in=4, quarantined=0, inserted=0, updated=0
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 07_gold_dimensions: success dim_client=4, dim_debtor=68, dim_account=95
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 08_gold_facts: success payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=93
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-14] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |33        |120780.34|29312.15 |24.3               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |5125.86  |9.2                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-15   |1) 0-30      |18        |77885.91           |
+|2026-11-15   |2) 31-60     |10        |33718.97           |
+|2026-11-15   |3) 61-90     |7         |39099.25           |
+|2026-11-15   |4) 90+       |47        |127670.54          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |150               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |98                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |168               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |115               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |204               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |112               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |167               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |180               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |177               |
+|ADG-632929        |Auckland Dental Group|Tane Thompson |+64 *** *118|4565.49            |2026-05-23       |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |13      |6   |46.2         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-14 | landing=/tmp/debt_local_nh69xw_w/landing
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|run_date  |check_name               |target               |status|observed     |expected         |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|2026-11-14|quarantine_rate_pct      |placements           |WARN  |50.0         |<= 10            |
+|2026-11-14|unmatched_payments       |payments_quarantine  |WARN  |1 txn, $40.00|0                |
+|2026-11-14|bank_reconciliation_count|bank_payments        |PASS  |4            |4                |
+|2026-11-14|bank_reconciliation_total|bank_payments        |PASS  |513.20       |513.20           |
+|2026-11-14|freshness                |placements           |PASS  |arrived      |file for run_date|
+|2026-11-14|freshness                |bank_payments        |PASS  |arrived      |file for run_date|
+|2026-11-14|freshness                |bank_control         |PASS  |arrived      |file for run_date|
+|2026-11-14|freshness                |contact_attempts     |PASS  |arrived      |file for run_date|
+|2026-11-14|one_current_version      |debtors              |PASS  |0            |0                |
+|2026-11-14|orphan_facts             |fact_payments        |PASS  |0            |0                |
+|2026-11-14|quarantine_rate_pct      |bank_payments        |PASS  |0.0          |<= 10            |
+|2026-11-14|quarantine_rate_pct      |contact_attempts     |PASS  |0.0          |<= 10            |
+|2026-11-14|unique_key               |accounts             |PASS  |0            |0                |
+|2026-11-14|unique_key               |payments             |PASS  |0            |0                |
+|2026-11-14|unique_key               |contact_attempts     |PASS  |0            |0                |
+|2026-11-14|unique_key               |fact_payments        |PASS  |0            |0                |
+|2026-11-14|unique_key               |fact_account_snapshot|PASS  |0            |0                |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+[2026-11-14] 10_data_quality: success passed=15, warnings=2, failures=0
+===== 2026-11-15 =====
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 02_bronze_ingest: success details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|source          |file_name                      |file_date |checksum                                                        |rows_loaded|status           |loaded_at                 |
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|1          |loaded           |2026-11-23 11:54:31.06328 |
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|0          |skipped_duplicate|2026-11-23 12:00:22.986692|
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|1          |loaded           |2026-11-23 11:57:01.284649|
+|bank_control    |bank_control_2026-11-15.csv    |2026-11-15|50f141c8c6803688260caa6045ed1f39e9265ae43b028283d5d07f3f82a9a27b|0          |skipped_duplicate|2026-11-23 11:55:45.506629|
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|5          |loaded           |2026-11-23 11:56:58.99056 |
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|0          |skipped_duplicate|2026-11-23 12:00:21.824396|
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|5          |loaded           |2026-11-23 11:54:28.320645|
+|bank_payments   |bank_payments_2026-11-15.csv   |2026-11-15|0359377f79710d76bd65983fb2f9c2865b64a28dae17326d27950c0279b5bf65|0          |skipped_duplicate|2026-11-23 11:55:44.178705|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|0          |skipped_duplicate|2026-11-23 12:00:24.212308|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|0          |skipped_duplicate|2026-11-23 11:55:46.867872|
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|4          |loaded           |2026-11-23 11:57:05.10777 |
+|contact_attempts|contact_attempts_2026-11-15.csv|2026-11-15|e99a60a22257b8d8b1b808c5c7af9d7096b42d20799cd7be6cbac983fab68bbc|4          |loaded           |2026-11-23 11:54:33.439517|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|0          |skipped_duplicate|2026-11-23 12:00:20.553986|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|0          |skipped_duplicate|2026-11-23 11:55:42.751708|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|6          |loaded           |2026-11-23 11:56:56.401655|
+|placements      |placements_2026-11-15.csv      |2026-11-15|355124fc38f041476866199c0f5c1f4e4737d511b3aa8cf48048351e9820b20f|6          |loaded           |2026-11-23 11:54:24.435621|
++----------------+-------------------------------+----------+----------------------------------------------------------------+-----------+-----------------+--------------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 03_silver_clients: no_data 
+  03_silver_clients: no client file for this date
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++------------------+------+
+|client_account_ref|reason|
++------------------+------+
++------------------+------+
+[2026-11-15] 04_silver_placements: success rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|debtor_key      |first_name|last_name|date_of_birth|phone_e164  |email                   |row_hash                                                        |valid_from|valid_to  |is_current|
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550102|liam.smith@example.co.nz|10d04b6c47ce70db25c16ce757ecb6e95ed7cb6e0d3b61a8df2959c9bc1a22ee|2026-11-14|2026-11-15|false     |
+|2646119463d11bb0|Liam      |Smith    |1975-07-12   |+64215550199|liam.smith@example.co.nz|b1692771382343e2cbe30cd91406268d509cb6cfff8a96d61bb6a1b1637dd458|2026-11-15|9999-12-31|true      |
++----------------+----------+---------+-------------+------------+------------------------+----------------------------------------------------------------+----------+----------+----------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 05_silver_payments: success rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4
++-----------+------------------+------+-------------------+
+|bank_txn_id|client_account_ref|amount|reason             |
++-----------+------------------+------+-------------------+
+|BNZ00000907|KPE-99999         |40.00 |unknown account ref|
++-----------+------------------+------+-------------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 06_silver_contacts: success rows_in=4, quarantined=0, inserted=0, updated=0
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 07_gold_dimensions: success dim_client=4, dim_debtor=68, dim_account=95
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|debtor_sk           |debtor_key      |debtor_name  |birth_year|phone_masked|email_masked      |valid_from|valid_to  |is_current|
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+|1227102478251395906 |003fe3d2e9fcf935|Ana Chen     |1971      |+64 *** *327|a***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-7966913226904840355|0124a746de471d8b|Jack Fa'alogo|1979      |+64 *** *317|j***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-1726480233297864156|02137d1d48a5ab75|Ella Williams|1984      |+64 *** *787|e***@example.co.nz|2026-11-13|9999-12-31|true      |
+|8218056180140346628 |062f8ab0809b9264|Oliver Patel |1978      |+64 *** *606|o***@example.co.nz|2026-11-13|9999-12-31|true      |
+|-8923799176834450628|072898320ec5c06c|Lucy Kumar   |2000      |+64 *** *487|l***@example.co.nz|2026-11-13|9999-12-31|true      |
++--------------------+----------------+-------------+----------+------------+------------------+----------+----------+----------+
+only showing top 5 rows
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 08_gold_facts: success payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
+[2026-11-15] 09_gold_kpi_views: success views=5
++---------------------+----------+---------+---------+-------------------+
+|client_name          |n_accounts|placed   |collected|collection_rate_pct|
++---------------------+----------+---------+---------+-------------------+
+|Kiwi Power Energy    |33        |120780.34|29312.15 |24.3               |
+|Auckland Dental Group|20        |65005.05 |9462.08  |14.6               |
+|Harbour Telecom      |17        |55980.04 |5125.86  |9.2                |
+|Southern Finance     |25        |84184.76 |3675.43  |4.4                |
++---------------------+----------+---------+---------+-------------------+
++-------------+-------------+----------+-------------------+
+|snapshot_date|ageing_bucket|n_accounts|outstanding_balance|
++-------------+-------------+----------+-------------------+
+|2026-11-15   |1) 0-30      |18        |77885.91           |
+|2026-11-15   |2) 31-60     |10        |33718.97           |
+|2026-11-15   |3) 61-90     |7         |39099.25           |
+|2026-11-15   |4) 90+       |47        |127670.54          |
++-------------+-------------+----------+-------------------+
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|client_account_ref|client_name          |debtor_name   |phone_masked|outstanding_balance|last_payment_date|days_since_payment|
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+|SFN-597305        |Southern Finance     |Sione Thompson|+64 *** *234|11582.33           |NULL             |150               |
+|KPE-859396        |Kiwi Power Energy    |Aroha Tupou   |+64 *** *773|11573.50           |2026-08-09       |98                |
+|ADG-563513        |Auckland Dental Group|Hemi Patel    |+64 *** *136|9557.99            |2026-05-31       |168               |
+|KPE-599219        |Kiwi Power Energy    |Sione Smith   |+64 *** *724|9148.48            |2026-07-23       |115               |
+|HTL-725780        |Harbour Telecom      |Wiremu Parata |+64 *** *451|8306.28            |NULL             |204               |
+|SFN-563711        |Southern Finance     |Sione Kumar   |+64 *** *801|7234.51            |NULL             |112               |
+|HTL-380150        |Harbour Telecom      |Tane Thompson |+64 *** *118|6574.48            |2026-06-01       |167               |
+|KPE-307963        |Kiwi Power Energy    |Oliver Kumar  |+64 *** *235|6377.76            |NULL             |180               |
+|SFN-619536        |Southern Finance     |Sione Thompson|+64 *** *234|5968.23            |NULL             |177               |
+|ADG-632929        |Auckland Dental Group|Tane Thompson |+64 *** *118|4565.49            |2026-05-23       |176               |
++------------------+---------------------+--------------+------------+-------------------+-----------------+------------------+
+only showing top 10 rows
++---------------------+--------+----+-------------+
+|client_name          |promises|kept|kept_rate_pct|
++---------------------+--------+----+-------------+
+|Kiwi Power Energy    |13      |6   |46.2         |
+|Southern Finance     |12      |1   |8.3          |
+|Harbour Telecom      |4       |1   |25.0         |
+|Auckland Dental Group|5       |2   |40.0         |
++---------------------+--------+----+-------------+
+Config loaded | catalog=None | run_date=2026-11-15 | landing=/tmp/debt_local_nh69xw_w/landing
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|run_date  |check_name               |target               |status|observed     |expected         |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+|2026-11-15|quarantine_rate_pct      |bank_payments        |WARN  |20.0         |<= 10            |
+|2026-11-15|unmatched_payments       |payments_quarantine  |WARN  |1 txn, $40.00|0                |
+|2026-11-15|bank_reconciliation_count|bank_payments        |PASS  |5            |5                |
+|2026-11-15|bank_reconciliation_total|bank_payments        |PASS  |890.00       |890.00           |
+|2026-11-15|freshness                |placements           |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_payments        |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |bank_control         |PASS  |arrived      |file for run_date|
+|2026-11-15|freshness                |contact_attempts     |PASS  |arrived      |file for run_date|
+|2026-11-15|one_current_version      |debtors              |PASS  |0            |0                |
+|2026-11-15|orphan_facts             |fact_payments        |PASS  |0            |0                |
+|2026-11-15|quarantine_rate_pct      |placements           |PASS  |0.0          |<= 10            |
+|2026-11-15|quarantine_rate_pct      |contact_attempts     |PASS  |0.0          |<= 10            |
+|2026-11-15|unique_key               |accounts             |PASS  |0            |0                |
+|2026-11-15|unique_key               |payments             |PASS  |0            |0                |
+|2026-11-15|unique_key               |contact_attempts     |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_payments        |PASS  |0            |0                |
+|2026-11-15|unique_key               |fact_account_snapshot|PASS  |0            |0                |
++----------+-------------------------+---------------------+------+-------------+-----------------+
+[2026-11-15] 10_data_quality: success passed=15, warnings=2, failures=0
++----------+--------------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|run_date  |step                |status |details                                                                                                                                                                                                         |
++----------+--------------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|2026-11-13|02_bronze_ingest    |success|details=clients: 4 rows loaded | placements: 88 rows loaded | bank_payments: 215 rows loaded | bank_control: 1 rows loaded | contact_attempts: 292 rows loaded                                                  |
+|2026-11-13|03_silver_clients   |success|inserted=4, updated=0                                                                                                                                                                                           |
+|2026-11-13|04_silver_placements|success|rows_in=88, quarantined=0, accounts_inserted=88, accounts_updated=0, debtor_versions_added=60, debtor_versions_closed=0                                                                                         |
+|2026-11-13|05_silver_payments  |success|rows_in=215, quarantined=0, in_file_duplicates=1, inserted=214, updated=0, already_loaded=0                                                                                                                     |
+|2026-11-13|06_silver_contacts  |success|rows_in=292, quarantined=0, inserted=292, updated=0                                                                                                                                                             |
+|2026-11-13|07_gold_dimensions  |success|dim_client=4, dim_debtor=60, dim_account=88                                                                                                                                                                     |
+|2026-11-13|08_gold_facts       |success|payments_inserted=214, payments_updated=0, contacts_inserted=292, snapshot_rows=88                                                                                                                              |
+|2026-11-13|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-13|10_data_quality     |success|passed=17, warnings=0, failures=0                                                                                                                                                                               |
+|2026-11-14|02_bronze_ingest    |success|details=clients: no file | placements: 12 rows loaded | bank_payments: 4 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded                                                            |
+|2026-11-14|03_silver_clients   |no_data|                                                                                                                                                                                                                |
+|2026-11-14|04_silver_placements|success|rows_in=12, quarantined=6, accounts_inserted=5, accounts_updated=0, debtor_versions_added=5, debtor_versions_closed=0                                                                                           |
+|2026-11-14|05_silver_payments  |success|rows_in=4, quarantined=0, in_file_duplicates=0, inserted=4, updated=0, already_loaded=0                                                                                                                         |
+|2026-11-14|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=4, updated=0                                                                                                                                                                 |
+|2026-11-14|07_gold_dimensions  |success|dim_client=4, dim_debtor=65, dim_account=93                                                                                                                                                                     |
+|2026-11-14|08_gold_facts       |success|payments_inserted=4, payments_updated=0, contacts_inserted=4, snapshot_rows=93                                                                                                                                  |
+|2026-11-14|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-14|10_data_quality     |success|passed=16, warnings=1, failures=0                                                                                                                                                                               |
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: 6 rows loaded | bank_payments: 5 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded                                                             |
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                                                                                |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=2, accounts_updated=2, debtor_versions_added=3, debtor_versions_closed=1                                                                                            |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=3, updated=0, already_loaded=1                                                                                                                         |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=3, updated=0                                                                                                                                                                 |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                                     |
+|2026-11-15|08_gold_facts       |success|payments_inserted=3, payments_updated=0, contacts_inserted=3, snapshot_rows=95                                                                                                                                  |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                                               |
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)                 |
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                                                                                |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0                                                                                            |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4                                                                                                                         |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=0, updated=0                                                                                                                                                                 |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                                     |
+|2026-11-15|08_gold_facts       |success|payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95                                                                                                                                  |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                                               |
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: 6 rows loaded | bank_payments: 5 rows loaded | bank_control: 1 rows loaded | contact_attempts: 4 rows loaded                                                             |
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                                                                                |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0                                                                                            |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4                                                                                                                         |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=0, updated=0                                                                                                                                                                 |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                                     |
+|2026-11-15|08_gold_facts       |success|payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95                                                                                                                                  |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                                               |
+|2026-11-13|02_bronze_ingest    |success|details=clients: skipped (already loaded) | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)|
+|2026-11-13|03_silver_clients   |success|inserted=0, updated=0                                                                                                                                                                                           |
+|2026-11-13|04_silver_placements|success|rows_in=88, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0                                                                                           |
+|2026-11-13|05_silver_payments  |success|rows_in=215, quarantined=0, in_file_duplicates=1, inserted=0, updated=0, already_loaded=214                                                                                                                     |
+|2026-11-13|06_silver_contacts  |success|rows_in=292, quarantined=0, inserted=0, updated=0                                                                                                                                                               |
+|2026-11-13|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                                     |
+|2026-11-13|08_gold_facts       |success|payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=88                                                                                                                                  |
+|2026-11-13|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-13|10_data_quality     |success|passed=16, warnings=1, failures=0                                                                                                                                                                               |
+|2026-11-14|02_bronze_ingest    |success|details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)                 |
+|2026-11-14|03_silver_clients   |no_data|                                                                                                                                                                                                                |
+|2026-11-14|04_silver_placements|success|rows_in=12, quarantined=6, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0                                                                                           |
+|2026-11-14|05_silver_payments  |success|rows_in=4, quarantined=0, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4                                                                                                                         |
+|2026-11-14|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=0, updated=0                                                                                                                                                                 |
+|2026-11-14|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                                     |
+|2026-11-14|08_gold_facts       |success|payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=93                                                                                                                                  |
+|2026-11-14|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-14|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                                               |
+|2026-11-15|02_bronze_ingest    |success|details=clients: no file | placements: skipped (already loaded) | bank_payments: skipped (already loaded) | bank_control: skipped (already loaded) | contact_attempts: skipped (already loaded)                 |
+|2026-11-15|03_silver_clients   |no_data|                                                                                                                                                                                                                |
+|2026-11-15|04_silver_placements|success|rows_in=6, quarantined=0, accounts_inserted=0, accounts_updated=0, debtor_versions_added=0, debtor_versions_closed=0                                                                                            |
+|2026-11-15|05_silver_payments  |success|rows_in=5, quarantined=1, in_file_duplicates=0, inserted=0, updated=0, already_loaded=4                                                                                                                         |
+|2026-11-15|06_silver_contacts  |success|rows_in=4, quarantined=0, inserted=0, updated=0                                                                                                                                                                 |
+|2026-11-15|07_gold_dimensions  |success|dim_client=4, dim_debtor=68, dim_account=95                                                                                                                                                                     |
+|2026-11-15|08_gold_facts       |success|payments_inserted=0, payments_updated=0, contacts_inserted=0, snapshot_rows=95                                                                                                                                  |
+|2026-11-15|09_gold_kpi_views   |success|views=5                                                                                                                                                                                                         |
+|2026-11-15|10_data_quality     |success|passed=15, warnings=2, failures=0                                                                                                                                                                               |
++----------+--------------------+-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+|run_date  |check_name         |target             |status|observed     |expected|checked_at                |
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+|2026-11-13|unmatched_payments |payments_quarantine|WARN  |1 txn, $40.00|0       |2026-11-23 11:59:19.204097|
+|2026-11-14|quarantine_rate_pct|placements         |WARN  |50.0         |<= 10   |2026-11-23 12:00:18.868933|
+|2026-11-14|unmatched_payments |payments_quarantine|WARN  |1 txn, $40.00|0       |2026-11-23 12:00:18.868933|
+|2026-11-15|quarantine_rate_pct|bank_payments      |WARN  |20.0         |<= 10   |2026-11-23 12:01:18.900372|
+|2026-11-15|unmatched_payments |payments_quarantine|WARN  |1 txn, $40.00|0       |2026-11-23 12:01:18.900372|
++----------+-------------------+-------------------+------+-------------+--------+--------------------------+
+Test 3, replay all days: PASS  (19/19 tables identical)
+[2026-11-13] 12_idempotency_test: success result=rerun=PASS, force_reload=PASS, replay=PASS
+LOCAL TEST RUN FINISHED OK
