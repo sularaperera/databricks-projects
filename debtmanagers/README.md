@@ -67,12 +67,6 @@ all data quality checks PASS (with the expected WARNs), and **all three idempote
 It has not been run on a real Databricks workspace. The only Databricks-specific parts are the volume path, the
 three-part table names and `dbutils`.
 
-## Interview talking points this project gives you
-- **Idempotency in three layers:** a file checksum in `load_log`, dedupe inside the batch, then MERGE on the business key with a row hash. All three are proven by `12_idempotency_test`.
-- **Backfill guard:** rerunning an old date never overwrites newer data (`only_if_newer`, and the `valid_from` check in SCD2).
-- **Money must reconcile:** the bank control total is checked to the cent, and unmatched payments are quarantined, not dropped.
-- **Point-in-time correctness:** facts use the debtor version valid on the event date, and snapshots count a payment only once it had arrived (`loaded_date`).
-- **Privacy Act:** phone and email are masked in gold, and only silver (restricted) holds the raw values.
-- **Known limitation, and what you'd do next:** `silver.accounts` is SCD1, so a restated old snapshot uses the latest balance. Next steps would be SCD2 for accounts, Auto Loader for many files, DLT/Lakeflow expectations for the rules, Unity Catalog row filters per client, and alerts on `dq_results`.
+
 
 All data is fake.
