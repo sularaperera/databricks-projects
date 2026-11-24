@@ -20,7 +20,7 @@ debt_meta: load_log, pipeline_runs, dq_results                                  
 ## Notebooks (run in this order, or use `11_run_pipeline`)
 | # | Notebook | What it does |
 |---|---|---|
-| 00 | `00_config` | Settings, metadata for each source, cleaning and MERGE helpers. Every notebook runs it first with `%run`. |
+| 00 | `00_config` | Settings (catalog, run_date, schema names, source list) and a few small cleaning and write helpers. Every notebook runs it first with `%run`. |
 | 01 | `01_setup` | Creates the schemas, the landing volume and the meta tables, and copies the sample CSVs into the volume |
 | 02 | `02_bronze_ingest` | Loads each file for `run_date` as raw text, skips files already loaded (checksum) |
 | 03 | `03_silver_clients` | Client reference data, SCD1 MERGE |
@@ -60,13 +60,12 @@ The catalog defaults to `workspace`. To use another one, change the `catalog` wi
 is its own task with dependencies (payments and contacts run in parallel), retries on bronze, `max_concurrent_runs: 1`,
 and a 7am NZ schedule (paused). Run `databricks bundle deploy`, then start the job with `run_date` = 2026-11-13, 14, 15.
 
-## Tested
-Every notebook was run end to end on open-source Spark 4.0.1 + Delta Lake 4.0.0 with `tools/run_local.py`. That script
-runs the notebooks exactly as written, with small stand-ins for `dbutils`. Results are in `tools/local_test_output.txt`:
-all data quality checks PASS (with the expected WARNs), and **all three idempotency tests PASS (19/19 tables identical)**.
-It has not been run on a real Databricks workspace. The only Databricks-specific parts are the volume path, the
-three-part table names and `dbutils`.
+## Testing locally
+`tools/run_local.py` runs the notebooks on open-source Spark + Delta Lake with small stand-ins for `dbutils` and
+`display()`, using Spark's built-in `spark_catalog` instead of a Unity Catalog catalog. It needs Java installed.
 
-
+`tools/local_test_output.txt` is the output from the **original** (`debtmanagers_demo`) version of this code. This
+simplified version keeps the same logic, so a run should give the same counts and checks, but it has not been run yet.
+The only Databricks-specific parts are the volume path, the three-part table names and `dbutils`.
 
 All data is fake.

@@ -1,7 +1,7 @@
 """
 Run the Databricks notebooks on a laptop with open-source Spark + Delta Lake (no Databricks needed).
-Used to test the project before uploading it. It provides small stand-ins for `dbutils.widgets` and
-`dbutils.notebook.run/exit`, then runs the notebooks exactly as written (cells split on "# COMMAND ----------").
+Used to test the project before uploading it. It provides small stand-ins for `dbutils.widgets`,
+`dbutils.notebook.run/exit` and `display()`, then runs the notebooks exactly as written (cells split on "# COMMAND ----------").
 
     pip install pyspark==4.0.1 delta-spark==4.0.0
     python tools/run_local.py                      # setup + pipeline (13-15 Nov) + idempotency tests
@@ -90,10 +90,16 @@ def _resolve(target, from_path):
     return p if p.endswith(".py") else p + ".py"
 
 
+def display(df):
+    """Stand-in for Databricks display(): print the first 20 rows."""
+    df.show(20, truncate=False)
+
+
 def run_notebook(path, params):
     path = _resolve(path, os.path.join(NOTEBOOKS, "x.py"))
-    dbutils.widgets.stack.append(dict(params))
-    g = {"spark": spark, "dbutils": dbutils, "__name__": "__notebook__"}
+    # Plain Spark has no "workspace" catalog, so use its built-in one (spark_catalog.debt_silver.accounts, ...)
+    dbutils.widgets.stack.append({"catalog": "spark_catalog", **params})
+    g = {"spark": spark, "dbutils": dbutils, "display": display, "__name__": "__notebook__"}
     try:
         _exec_cells(path, g)
         return None

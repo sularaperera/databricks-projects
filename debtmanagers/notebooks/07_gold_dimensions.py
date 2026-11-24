@@ -1,16 +1,16 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # 07_gold_dimensions: the "who, what, when" of the star schema
-# MAGIC | Dimension | Grain | Notes |
+# MAGIC | Dimension | One row = | Notes |
 # MAGIC |---|---|---|
 # MAGIC | `dim_date` | one calendar day | NZ financial year (April to March), weekends |
-# MAGIC | `dim_client` | one client | from silver SCD1 |
-# MAGIC | `dim_debtor` | one **version** of a debtor | SCD2 from silver. Phone and email are **masked**: gold is for reporting, not contacting people. |
+# MAGIC | `dim_client` | one client | from silver (SCD1) |
+# MAGIC | `dim_debtor` | one **version** of a debtor | SCD2 from silver. Phone and email are **masked**: gold is for reporting, not for contacting people. |
 # MAGIC | `dim_account` | one debt | links to client and debtor |
 # MAGIC
-# MAGIC Surrogate keys are `xxhash64` of the business key (plus `valid_from` for SCD2), so they're **deterministic**:
-# MAGIC a rebuild gives the same keys, and facts never point at the wrong row. Dimensions are small, so a full overwrite
-# MAGIC each run is the simplest idempotent option.
+# MAGIC The surrogate keys (`*_sk`) are an `xxhash64` of the business key (plus `valid_from` for SCD2). The same input
+# MAGIC always gives the same key, so a rebuild gives the same keys and facts never point at the wrong row.
+# MAGIC Dimensions are small, so we simply rebuild them every run (`CREATE OR REPLACE TABLE`). That's safe to rerun.
 
 # COMMAND ----------
 
@@ -18,47 +18,74 @@
 
 # COMMAND ----------
 
-dim_date = (spark.sql("SELECT explode(sequence(DATE'2025-01-01', DATE'2027-12-31', INTERVAL 1 DAY)) AS date")
-    .select(F.date_format("date", "yyyyMMdd").cast("int").alias("date_key"), "date",
-            F.year("date").alias("year"), F.month("date").alias("month"),
-            F.date_format("date", "yyyy-MM").alias("year_month"), F.date_format("date", "MMMM").alias("month_name"),
-            F.quarter("date").alias("quarter"),
-            F.when(F.month("date") >= 4, F.year("date") + 1).otherwise(F.year("date")).alias("nz_financial_year"),
-            F.dayofweek("date").isin(1, 7).alias("is_weekend")))
-dim_date.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(tbl(GOLD, "dim_date"))
+spark.sql(f"""
+    CREATE OR REPLACE TABLE {GOLD}.dim_date USING DELTA AS
+    SELECT
+        CAST(date_format(date, 'yyyyMMdd') AS INT)                         AS date_key,
+        date,
+        year(date)                                                          AS year,
+        month(date)                                                         AS month,
+        date_format(date, 'yyyy-MM')                                        AS year_month,
+        date_format(date, 'MMMM')                                           AS month_name,
+        quarter(date)                                                       AS quarter,
+        CASE WHEN month(date) >= 4 THEN year(date) + 1 ELSE year(date) END  AS nz_financial_year,
+        dayofweek(date) IN (1, 7)                                           AS is_weekend
+    FROM (SELECT explode(sequence(DATE'2025-01-01', DATE'2027-12-31', INTERVAL 1 DAY)) AS date)
+""")
 
 # COMMAND ----------
 
-dim_client = (spark.table(tbl(SILVER, "clients"))
-    .select(F.xxhash64("client_code").alias("client_sk"), "client_code", "client_name", "industry", "commission_rate"))
-dim_client.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(tbl(GOLD, "dim_client"))
+spark.sql(f"""
+    CREATE OR REPLACE TABLE {GOLD}.dim_client USING DELTA AS
+    SELECT
+        xxhash64(client_code) AS client_sk,
+        client_code,
+        client_name,
+        industry,
+        commission_rate
+    FROM {SILVER}.clients
+""")
 
 # COMMAND ----------
 
-def mask_phone(c):
-    return F.concat(F.lit("+64 *** *"), F.substring(F.col(c), -3, 3))
-
-
-def mask_email(c):
-    return F.regexp_replace(F.col(c), r"^(.).*(@.*)$", "$1***$2")
-
-
-dim_debtor = (spark.table(tbl(SILVER, "debtors"))
-    .select(F.xxhash64("debtor_key", "valid_from").alias("debtor_sk"), "debtor_key",
-            F.concat_ws(" ", "first_name", "last_name").alias("debtor_name"),
-            F.year("date_of_birth").alias("birth_year"),   # not age: age changes daily, so reruns would differ
-            mask_phone("phone_e164").alias("phone_masked"),
-            mask_email("email").alias("email_masked"),
-            "valid_from", "valid_to", "is_current"))
-dim_debtor.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(tbl(GOLD, "dim_debtor"))
+# Masking: '+64215550101' -> '+64 *** *101' and 'aroha@example.com' -> 'a***@example.com'
+# birth_year instead of age: age changes every day, so a rerun would give different results
+spark.sql(f"""
+    CREATE OR REPLACE TABLE {GOLD}.dim_debtor USING DELTA AS
+    SELECT
+        xxhash64(debtor_key, valid_from)                     AS debtor_sk,
+        debtor_key,
+        concat_ws(' ', first_name, last_name)                AS debtor_name,
+        year(date_of_birth)                                  AS birth_year,
+        concat('+64 *** *', substring(phone_e164, -3, 3))    AS phone_masked,
+        regexp_replace(email, '^(.).*(@.*)$', '$1***$2')     AS email_masked,
+        valid_from,
+        valid_to,
+        is_current
+    FROM {SILVER}.debtors
+""")
 
 # COMMAND ----------
 
-dim_account = (spark.table(tbl(SILVER, "accounts"))
-    .select(F.xxhash64("client_code", "client_account_ref").alias("account_sk"),
-            "client_account_ref", "client_code", F.xxhash64("client_code").alias("client_sk"),
-            "debtor_key", "placed_date", "placed_balance", "first_seen_date"))
-dim_account.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(tbl(GOLD, "dim_account"))
+spark.sql(f"""
+    CREATE OR REPLACE TABLE {GOLD}.dim_account USING DELTA AS
+    SELECT
+        xxhash64(client_code, client_account_ref) AS account_sk,
+        client_account_ref,
+        client_code,
+        xxhash64(client_code)                     AS client_sk,
+        debtor_key,
+        placed_date,
+        placed_balance,
+        first_seen_date
+    FROM {SILVER}.accounts
+""")
 
-log_step("07_gold_dimensions", dim_client=dim_client.count(), dim_debtor=dim_debtor.count(), dim_account=dim_account.count())
-show(spark.table(tbl(GOLD, "dim_debtor")).orderBy("debtor_key", "valid_from"), 5)
+# COMMAND ----------
+
+n_clients = spark.table(f"{GOLD}.dim_client").count()
+n_debtors = spark.table(f"{GOLD}.dim_debtor").count()
+n_accounts = spark.table(f"{GOLD}.dim_account").count()
+log_step("07_gold_dimensions", f"dim_client={n_clients}, dim_debtor={n_debtors}, dim_account={n_accounts}")
+
+display(spark.table(f"{GOLD}.dim_debtor").orderBy("debtor_key", "valid_from").limit(5))
